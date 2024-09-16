@@ -3,14 +3,11 @@ import Cards from "../components/Home/Cards";
 import axios from "axios";
 
 const CompletedTasks = () => {
-  const [data, setData] = useState([]); // State to store completed tasks
-
-  // Fetch completed tasks when the component loads
+  const [data, setData] = useState([]);
   useEffect(() => {
     const fetchTasks = async () => {
       try {
         const headers = {
-          id: localStorage.getItem("id"),
           authorization: `Bearer ${localStorage.getItem("token")}`,
         };
 
@@ -19,18 +16,18 @@ const CompletedTasks = () => {
           "http://localhost:1000/api/v2/get-com-task",
           { headers }
         );
-        setData(response.data.tasks || []); // Set state with completed tasks
+
+        setData(response.data.tasks || []);
       } catch (error) {
         console.error("Error fetching completed tasks:", error);
       }
     };
 
-    fetchTasks(); // Trigger fetching tasks
+    fetchTasks();
   }, []);
 
   return (
     <div>
-      {/* Pass completed tasks to Cards component */}
       <Cards home={false} data={data} />
     </div>
   );

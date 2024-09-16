@@ -162,7 +162,7 @@ router.get("/get-com-task", authenticationToken, async (req, res) => {
   try {
     const completedTasks = await Task.find({
       userId: req.headers.id,
-      completed: true,
+      complete: true,
     });
 
     return res.status(200).json({
