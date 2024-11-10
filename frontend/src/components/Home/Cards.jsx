@@ -12,7 +12,7 @@ const Cards = ({ home, setInputDiv, data, setUpdatedData }) => {
   const handleCompleteTask = async (id) => {
     try {
       const response = await axios.put(
-        `http://localhost:1000/api/v2/update-com-task/${id}`,
+        `https://taskmanager-backend-ji9u.onrender.com/api/v2/update-com-task/${id}`,
         {},
         { headers }
       );
@@ -30,7 +30,7 @@ const Cards = ({ home, setInputDiv, data, setUpdatedData }) => {
   const deleteTask = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:1000/api/v2/delete-task/${id}`,
+        `https://taskmanager-backend-ji9u.onrender.com/api/v2/delete-task/${id}`,
         { headers }
       );
       alert(response.data.message);
