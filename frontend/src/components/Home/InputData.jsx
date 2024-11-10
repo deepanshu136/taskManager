@@ -40,7 +40,7 @@ const InputData = ({ inputDiv, setInputDiv, UpdatedData, setTasks }) => {
         if (Data.id) {
           // If an ID is present, update the task
           const response = await axios.put(
-            `http://localhost:1000/api/v2/update-task/${Data.id}`,
+            `https://taskmanager-backend-ji9u.onrender.com/api/v2/update-task/${Data.id}`,
             Data,
             { headers }
           );
@@ -53,7 +53,7 @@ const InputData = ({ inputDiv, setInputDiv, UpdatedData, setTasks }) => {
         } else {
           // If no ID, create a new task
           const response = await axios.post(
-            "http://localhost:1000/api/v2/create-task",
+            "https://taskmanager-backend-ji9u.onrender.com/api/v2/create-task",
             Data,
             { headers }
           );
