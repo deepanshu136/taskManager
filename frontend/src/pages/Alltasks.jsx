@@ -23,7 +23,7 @@ const Alltasks = () => {
     const fetchTasks = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1000/api/v2/get-all-task",
+          "https://taskmanager-backend-ji9u.onrender.com/api/v2/get-all-task",
           { headers }
         );
         console.log("Fetched Tasks:", response.data.tasks);
