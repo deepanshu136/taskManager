@@ -12,7 +12,7 @@ const Incompletetasks = () => {
 
         // API call to get completed tasks
         const response = await axios.get(
-          "http://localhost:1000/api/v2//get-incom-task",
+          "https://taskmanager-backend-ji9u.onrender.com/api/v2//get-incom-task",
           { headers }
         );
 
